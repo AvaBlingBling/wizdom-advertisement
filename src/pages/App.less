@@ -1,0 +1,95 @@
+.App {
+    min-width: 1900px;
+    .App-header {
+        height: 70px;
+        line-height: 70px;
+        color: white;
+        display: flex;
+        padding: 0 20px;
+        .App-left {
+            min-width: 250px;
+            .App-logo {
+                height: 60px;
+                margin: 5px 0;
+                vertical-align: top;
+            }
+            .App-title {
+                display: inline-block;
+                color: #fff;
+                margin: 5px 10px;
+                border-left: 1px solid #fff;
+                padding-left: 20px;
+                >div {
+                    line-height: 30px;
+                }
+                &-main {
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .App-nav {
+            flex-grow: 1;
+            text-align: center;
+            overflow: hidden;
+            padding-left: 10%;
+            :global(.ant-menu) {
+                line-height: unset;
+                background: transparent;
+                :global {
+                    .ant-menu-submenu,
+                    .ant-menu-submenu-selected,
+                    .ant-menu-item-selected,
+                    .ant-menu-item {
+                        font-size: 1.2em;
+                        transition: none;
+                        color: #fff;
+                        a {
+                            color: #fff;
+                        }
+                    }
+                    .ant-menu-item-selected,
+                    .ant-menu-submenu-selected {
+                        background-color: #519ce9;
+                    }
+                    .ant-menu-item:hover,
+                    .ant-menu-submenu:hover,
+                    .ant-menu-item-active,
+                    .ant-menu-submenu-active,
+                    .ant-menu-item-open,
+                    .ant-menu-submenu-open,
+                    .ant-menu-item-selected,
+                    .ant-menu-submenu-selected {
+                        border-bottom: none;
+                    }
+                    .ant-menu-item:hover,
+                    .ant-menu-submenu:hover {
+                        background-color: #3796e6;
+                    }
+                }
+            }
+        }
+        .App-right {
+            .ant-avatar {
+                vertical-align: middle;
+            }
+        }
+    }
+    .App-content {
+        height: calc(~"100vh - 70px");
+    }
+}
+
+:global {
+    .blueGradient {
+        background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#326be6), to(#04c2dc));
+        background-color: #326be6;
+    }
+    .hidden-word {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        word-wrap: break-word;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}

@@ -1,0 +1,65 @@
+.info {
+    padding: 10px 15px;
+    overflow: hidden;
+    height: 100%;
+    .info-search {
+        width: 20%; // min-width: 300px;
+        float: left;
+        .ant-form-item {
+            margin-bottom: 10px;
+        }
+    }
+    .info-content {
+        float: left;
+        width: 80%;
+        padding: 10px 20px;
+        overflow-y: auto;
+        height: 100%;
+        .button-groups {
+            button {
+                margin-right: 8px;
+                margin-bottom: 12px;
+            }
+        }
+        .info-table-img {
+            width: 40px;
+            cursor: pointer;
+        }
+    }
+    .map-affix {
+        border-radius: 50px 0 0 50px;
+        border: 1px solid #ccc;
+        position: fixed;
+        right: 0;
+        top: 250px;
+        padding: 3px 19px;
+        border-right: none;
+        box-shadow: -5px 5px 10px #ccc;
+        z-index: 1000;
+        background: #fff;
+        img {
+            width: 24px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.show-map {
+    .info-search {
+        display: none;
+    }
+    .info-content {
+        width: 70%;
+        padding-left: 0;
+    }
+    .map-affix {
+        border-radius: 0 50px 50px 0;
+        right: calc(~ "30% - 65px");
+        box-shadow: 5px 5px 10px #ccc;
+    }
+    .map-content {
+        width: 30%;
+        float: left;
+        height: 100%;
+    }
+}

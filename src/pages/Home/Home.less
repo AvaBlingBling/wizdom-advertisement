@@ -1,0 +1,239 @@
+.home {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    :global(.grey-shadow) {
+        box-shadow: 5px 5px 10px #d6d5d4;
+    }
+    .map {
+        height: 100%;
+    }
+    .container {
+        position: relative;
+        top: calc(~"-100% + 30px");
+        padding: 0 50px;
+        .advertise {
+            width: 25%;
+            float: left;
+            .advertise-list {
+                background: #fff;
+                margin-top: 10px;
+                border-left: 1px solid #e4e4e4;
+                .list-title {
+                    line-height: 40px;
+                    background-color: #f8f8f8;
+                    padding: 0 10px;
+                    .anticon-close {
+                        float: right;
+                        line-height: 40px;
+                        &:before {
+                            transition: transform .3s;
+                            color: #5589f9;
+                        }
+                        &:hover:before {
+                            color: red;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                .list-content {
+                    padding: 10px;
+                    .advertise-list-item {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        background: #f2f2f2;
+                        margin-bottom: 10px;
+                        padding: 10px;
+                        &-sort {
+                            position: absolute;
+                            background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#326be6), to(#04c2dc));
+                            float: left;
+                            width: 24px;
+                            height: 24px;
+                            top: 0;
+                            left: 0;
+                            text-align: center;
+                            line-height: 24px;
+                            color: #fff;
+                        }
+                        img {
+                            width: 70px;
+                            height: 68px;
+                            margin: 0 10px 0 25px;
+                        }
+                        &-desc {
+                            flex: 1;
+                            font-size: 12px;
+                            p {
+                                margin-bottom: 0;
+                                line-height: 24px;
+                            }
+                        }
+                        &-status {
+                            padding: 0 10px;
+                            border-left: 1px solid #ccc;
+                            font-size: 12px;
+                        }
+                        &-status.success {
+                            color: #5589f9;
+                        }
+                        &-status.waitting {
+                            color: #FF9900;
+                        }
+                        &-status.fail {
+                            color: #FF0000;
+                        }
+                    }
+                }
+            }
+        }
+        .data {
+            width: 75%;
+            margin-left: 25%;
+            .data-badge {
+                float: left;
+                margin-left: 20px;
+                border: 1px solid #ccc;
+                height: 50px;
+                background: #fff;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .shrinkImg {
+                    margin: 0 20px;
+                    width: 16px;
+                    height: 16px;
+                    background: url("../../images/shrink.png") no-repeat;
+                    transition: transform 0.3s;
+                    &:hover {
+                        background: url("../../images/shrink-select.png") no-repeat;
+                    }
+                }
+                .data-list {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    transition: width 0.3s;
+                    div:not(:last-child) {
+                        border-right: 1px solid #ececec;
+                        margin-right: 10px;
+                    }
+                    div:first-child {
+                        .data-item-label {
+                            font-size: 14px;
+                            color: #000;
+                        }
+                        .data-item-value {
+                            font-size: 24px;
+                            font-weight: 900;
+                        }
+                    }
+                    .data-item-label {
+                        font-weight: 650;
+                        color: #999999;
+                        font-size: 12px;
+                        vertical-align: middle;
+                    }
+                    .data-item-value {
+                        font-size: 18px;
+                        color: #316BE6;
+                        margin: 0 10px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .chart {
+                width: 320px;
+                float: right;
+                .case-chart {
+                    background: #fff;
+                    padding: 10px;
+                }
+            }
+        }
+        .hiddenData {
+            .shrinkImg {
+                transform: rotate(180deg);
+                &:hover {
+                    background: url("../../images/shrink-select.png") no-repeat;
+                }
+            }
+            .data-list,
+            .chart {
+                width: 0;
+                visibility: hidden; // 不知道有什么作用，不加的话，收缩广告时会有横向滚动条闪现
+                float: none;
+            }
+        }
+    }
+    .tools {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        .shrinkImg {
+            margin: 0 20px;
+            width: 16px;
+            height: 16px;
+            background: url("../../images/shrink.png") no-repeat;
+            transition: transform 0.3s;
+            &:hover {
+                background: url("../../images/shrink-select.png") no-repeat;
+            }
+        }
+        .tools-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: width 0.3s;
+            .tangle,
+            .circle {
+                width: 50px;
+                height: 50px;
+                position: relative;
+                &::after {
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    border: 2px solid #fff;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &:hover {
+                    background-color: blue;
+                }
+            }
+            .circle::after {
+                border-radius: 50%;
+            }
+            .polygon {
+                width: 50px;
+                height: 50px;
+                background: url("../../images/polygon.png") no-repeat;
+                background-position: center;
+                &:hover {
+                    background-color: #2362e8;
+                }
+            }
+        }
+    }
+    .hiddenTools {
+        .shrinkImg {
+            transform: rotate(180deg);
+            &:hover {
+                background: url("../../images/shrink-select.png") no-repeat;
+            }
+        }
+        .tools-item {
+            width: 0;
+            visibility: hidden
+        }
+    }
+}
